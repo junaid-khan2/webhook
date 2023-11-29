@@ -5,6 +5,7 @@ import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 // import { Head } from '@inertiajs/react';
 import ChatInput from '@/Components/Chat/ChatInput';
 
+
 export default function Chat(props) {
   console.log(props);
   return (
@@ -17,6 +18,7 @@ export default function Chat(props) {
           <div className="flex">
             <div className="basis-2/6 border-r border-slate-100 pb-2 bg-white">
               <ChatSidebar recentMessages={props.recentMessages} />
+
             </div>
             <div className="basis-4/6">
               {
