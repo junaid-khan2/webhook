@@ -16,7 +16,7 @@ class ChatController extends Controller
     }
     public function index(Request $request, ?int $reciverId = null)
     {
-<<<<<<< HEAD
+
         $messages = empty($reciverId) ? [] : $this->chat->getUserMessages((int) $request->user()->id, (int) $reciverId);
         return Inertia::render('Chat/Chat',[
             'messages' => $messages,
@@ -48,9 +48,6 @@ class ChatController extends Controller
             return Redirect::route('chat.index',$reciverId);
         }
         
-=======
-        // echo "working";
-        return Inertia::render('Chat/Chat');
->>>>>>> 12405ff1f9d1adc091f764021c3e63a534352299
+
     }
 }
