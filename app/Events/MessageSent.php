@@ -32,7 +32,7 @@ class MessageSent implements ShouldBroadcast
     public function broadcastOn(): array
     {
         return [
-            new PrivateChannel('messager'),
+            new PrivateChannel('messager.1.2'),
         ];
     }
 }
