@@ -40,6 +40,7 @@ Route::middleware('auth')->group(function () {
     Route::group(['prefix' => 'chat' ,'as' => 'chat.'], function(){
         Route::get('/{reciverId?}', [ChatController::class, 'index'])->name('index'); 
         Route::post('/{reciverId?}', [ChatController::class, 'store'])->name('store'); 
+        Route::get('/{sender?}/{receiver?}', [ChatController::class, 'getmessage'])->name('getmessage');
         
     });
 });

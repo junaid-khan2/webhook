@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Repository\ChatRepository;
 use App\Events\MessageSent;
 use App\Models\User;
+use App\Models\Message;
 use Illuminate\Support\Facades\Redirect;
 use Inertia\Inertia;
 
@@ -49,5 +50,14 @@ class ChatController extends Controller
         }
         
 
+    }
+
+    public function getmessage($sender=null , $reciverId = null){
+        $data = Message::whereIn('sender_id', [$sender, $reciverId])
+                                ->orWhereIn('receiver_id',[$sender, $reciverId])
+                                ->orderBy('created_at','DESC')
+                                ->get();
+
+                                return response()->json($data);
     }
 }
